@@ -1,0 +1,16 @@
+<div class="container">
+  <div id="center">
+    <center><h2><u><i class="fa fa-book"></i> <%=@user.username%>'s Questions</u></h2></center>
+    <center><h4 id="prof-info">Member since <%= @user.created_at.to_date %></h4></center>
+    <center><h3>Amount of questions asked: <%= @user.questions.length %></h3></center>
+
+    <center>Amount of questions answered: <%= @user.answers.length %> </center>
+    <center>Amount of comments left on questions: <%= @user.comments.length %> </center>
+  </div>
+  
+    <% @user.questions.each do |question| %>
+    <ul>
+      <li class="list-unstyled"><a href="/questions/<%=question.id%>"><%= question.title %></a></li>
+    </ul>
+    <% end %>
+</div>
